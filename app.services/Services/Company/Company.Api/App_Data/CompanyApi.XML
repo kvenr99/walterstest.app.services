@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Company.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Company.Api.SwaggerConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Api.SwaggerConfig.Register">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Company.Api.UnityConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Api.UnityConfig.RegisterComponents">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Company.Api.WebApiConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Api.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:Company.Api.Controllers.AccountController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Company.Api.Controllers.AccountController.#ctor(System.Lazy{Company.BL.Interfaces.IAccount})">
+            <summary>
+            
+            </summary>
+            <param name="account"></param>
+        </member>
+        <member name="M:Company.Api.Controllers.AccountController.getByName(System.String)">
+            <summary>
+            Get User Accounts
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

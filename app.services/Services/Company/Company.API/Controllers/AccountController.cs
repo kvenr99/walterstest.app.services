@@ -12,18 +12,18 @@ namespace Company.Api.Controllers
 {/// <summary>
 /// 
 /// </summary>
-    [RoutePrefix("accounts")]
+    [RoutePrefix("account")]
     public class AccountController : ApiController
     {
-        private readonly Lazy<IAccount> _accounts;
+        private readonly Lazy<IAccount> _account;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="accounts"></param>
-        public AccountController(Lazy<IAccount> accounts)
+        /// <param name="account"></param>
+        public AccountController(Lazy<IAccount> account)
         {
-            _accounts = accounts;
+            _account = account;
         }
         /// <summary>
         /// Get User Accounts
@@ -36,7 +36,7 @@ namespace Company.Api.Controllers
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(string))]
         public IHttpActionResult getByName(string name)
         {
-            return Ok(_accounts.Value.getByName(name));
+            return Ok(_account.Value.getByName(name));
         }
 
       
