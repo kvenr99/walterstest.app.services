@@ -15,15 +15,14 @@ namespace Company.BL
   
     public class Account : IAccount
     {
+        string connectionString = ConfigurationManager.AppSettings["connectionstring"];
 
         public List<account> getByName(string name)
         {
-
-            var connectionString = ConfigurationManager.AppSettings["connectionstring"];
-
+            
             var client = new MongoClient(connectionString);
-            IMongoDatabase db = client.GetDatabase("loan");
-            List<account> accountCollection = db.GetCollection<account>("accounts").AsQueryable().Select(x => new account { Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
+            IMongoDatabase db = client.GetDatabase("company");
+            List<account> accountCollection = db.GetCollection<account>("account").AsQueryable().Select(x => new account { Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
             fuzzySearch.Search(name, accountCollection, 0.70);
             return accountCollection;
         }
@@ -31,22 +30,18 @@ namespace Company.BL
         public List<account> getAll()
         {
 
-            var connectionString = ConfigurationManager.AppSettings["connectionstring"];
-
             var client = new MongoClient(connectionString);
-            IMongoDatabase db = client.GetDatabase("loan");
-            List<account> accountCollection = db.GetCollection<account>("accounts").AsQueryable().Select(x => new account {Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
+            IMongoDatabase db = client.GetDatabase("company");
+            List<account> accountCollection = db.GetCollection<account>("account").AsQueryable().Select(x => new account {Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
             return accountCollection;
         }
 
         public account getById(int id)
         {
 
-            var connectionString = ConfigurationManager.AppSettings["connectionstring"];
-
             var client = new MongoClient(connectionString);
-            IMongoDatabase db = client.GetDatabase("loan");
-            account accountDetails = db.GetCollection<account>("accounts").AsQueryable().Where(x => x.Id == id).Select(x => new account { Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).FirstOrDefault();
+            IMongoDatabase db = client.GetDatabase("company");
+            account accountDetails = db.GetCollection<account>("account").AsQueryable().Where(x => x.Id == id).Select(x => new account { Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).FirstOrDefault();
            
             return accountDetails;
         }

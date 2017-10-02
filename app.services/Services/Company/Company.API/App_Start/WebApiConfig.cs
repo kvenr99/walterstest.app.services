@@ -20,7 +20,7 @@ namespace Company.Api
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            UnityConfig.RegisterComponents();
           
         }
     }

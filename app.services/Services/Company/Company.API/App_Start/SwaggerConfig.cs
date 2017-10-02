@@ -25,7 +25,7 @@ namespace Company.Api
    .EnableSwagger(c =>
    {
        c.SingleApiVersion("v1", "CompanyApi");
-       c.IncludeXmlComments(string.Format(@"{0}\bin\CompanyApi.XML",
+       c.IncludeXmlComments(string.Format(@"{0}\App_Data\CompanyApi.XML",
                             System.AppDomain.CurrentDomain.BaseDirectory));
    })
    .EnableSwaggerUi();
