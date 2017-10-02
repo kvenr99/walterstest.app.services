@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserServices</name>
+    </assembly>
+    <members>
+        <member name="T:UserServices.SwaggerConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UserServices.SwaggerConfig.Register">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:UserServices.Controllers.AccountController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UserServices.Controllers.AccountController.#ctor(System.Lazy{LoanBL.Interfaces.IAccount})">
+            <summary>
+            
+            </summary>
+            <param name="accounts"></param>
+        </member>
+        <member name="M:UserServices.Controllers.AccountController.getByName(System.String)">
+            <summary>
+            Get User Accounts
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6BB0B3EE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Company", "Company", "{57D80659-192B-4353-AED4-6C8B169796E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.BL", "..\..\services1\ApiServices\AccountsBL\Company.BL.csproj", "{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Api", "app.services\Services\Company\Company.API\Company.Api.csproj", "{0BE590AA-3572-42F8-A5A7-BEACFD40CC51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Api", "..\..\services1\ApiServices\UserServices\Company.Api.csproj", "{0BE590AA-3572-42F8-A5A7-BEACFD40CC51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.BL", "app.services\Services\Company\Company.BL\Company.BL.csproj", "{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.common", "..\..\services1\shared\app.common\app.common.csproj", "{0B4AAD3E-5D4D-432F-AD8A-68D8AB9B10E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.common", "app.services\Shared\app.common\app.common.csproj", "{0B4AAD3E-5D4D-432F-AD8A-68D8AB9B10E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.core", "..\..\services1\shared\app.core\app.core.csproj", "{A2CE5BF7-A613-4DD3-8259-CA6D77F9E92E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.core", "app.services\Shared\app.core\app.core.csproj", "{A2CE5BF7-A613-4DD3-8259-CA6D77F9E92E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.entities", "..\..\services1\shared\app.entities\app.entities.csproj", "{5044F6E1-CF9E-4FA3-9AE1-4D7AF0E202D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.entities", "app.services\Shared\app.entities\app.entities.csproj", "{5044F6E1-CF9E-4FA3-9AE1-4D7AF0E202D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,14 +27,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0BE590AA-3572-42F8-A5A7-BEACFD40CC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0BE590AA-3572-42F8-A5A7-BEACFD40CC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BE590AA-3572-42F8-A5A7-BEACFD40CC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BE590AA-3572-42F8-A5A7-BEACFD40CC51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B4AAD3E-5D4D-432F-AD8A-68D8AB9B10E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B4AAD3E-5D4D-432F-AD8A-68D8AB9B10E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B4AAD3E-5D4D-432F-AD8A-68D8AB9B10E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,8 +53,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{57D80659-192B-4353-AED4-6C8B169796E3} = {005C990F-CCDC-45FA-A431-D2FD41B9BCF3}
-		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE} = {57D80659-192B-4353-AED4-6C8B169796E3}
 		{0BE590AA-3572-42F8-A5A7-BEACFD40CC51} = {57D80659-192B-4353-AED4-6C8B169796E3}
+		{DA091B17-0527-4F65-8AD7-7CE4B6EBCEFE} = {57D80659-192B-4353-AED4-6C8B169796E3}
 		{0B4AAD3E-5D4D-432F-AD8A-68D8AB9B10E5} = {758547DA-D546-440D-9516-8810EBE4A7DB}
 		{A2CE5BF7-A613-4DD3-8259-CA6D77F9E92E} = {758547DA-D546-440D-9516-8810EBE4A7DB}
 		{5044F6E1-CF9E-4FA3-9AE1-4D7AF0E202D1} = {758547DA-D546-440D-9516-8810EBE4A7DB}
