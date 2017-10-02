@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using app.entities;
 
-namespace LoanBL.Interfaces
+namespace Company.BL.Interfaces
 {
     public interface IAccount
     {

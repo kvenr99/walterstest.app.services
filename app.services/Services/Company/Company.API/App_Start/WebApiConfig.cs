@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-
-namespace UserServices
+namespace Company.Api
 {
     public static class WebApiConfig
     {
@@ -15,8 +14,11 @@ namespace UserServices
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-           
-
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
         }
     }
 }
