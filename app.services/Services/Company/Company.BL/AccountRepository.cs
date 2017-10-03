@@ -19,6 +19,7 @@ namespace Company.BL
 
         public List<Account> getByName(string name)
         {
+
             var client = new MongoClient(connectionString);
             IMongoDatabase db = client.GetDatabase("company");
             List<Account> accountCollection = db.GetCollection<Account>("account").AsQueryable().Select(x => new Account { Id=x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
