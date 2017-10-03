@@ -15,15 +15,16 @@ namespace Company.BL
   
     public class AccountRepository : IAccountRepository
     {
-        string connectionString = ConfigurationManager.AppSettings["connectionstring"];
+        private string connectionString = ConfigurationManager.AppSettings["connectionstring"];
+      
 
         public List<Account> getByName(string name)
         {
-
             var client = new MongoClient(connectionString);
+            Double fuzzyNess = Convert.ToDouble(ConfigurationManager.AppSettings["fuzzyness"]);
             IMongoDatabase db = client.GetDatabase("company");
             List<Account> accountCollection = db.GetCollection<Account>("account").AsQueryable().Select(x => new Account { Id=x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
-            fuzzySearch.Search(name, accountCollection, 0.70);
+            fuzzySearch.Search(name, accountCollection, fuzzyNess);
             return accountCollection;
         }
 
