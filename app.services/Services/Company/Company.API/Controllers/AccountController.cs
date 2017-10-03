@@ -15,15 +15,15 @@ namespace Company.Api.Controllers
     [RoutePrefix("account")]
     public class AccountController : ApiController
     {
-        private readonly Lazy<IAccount> _account;
+        private readonly Lazy<IAccountRepository> _accountRepository;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="account"></param>
-        public AccountController(Lazy<IAccount> account)
+        /// <param name="accountRepository"></param>
+        public AccountController(Lazy<IAccountRepository> accountRepository)
         {
-            _account = account;
+            _accountRepository = accountRepository;
         }
         /// <summary>
         /// Get User Accounts
@@ -32,11 +32,16 @@ namespace Company.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("{name}")]
-        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(List<account>))]
+        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(List<Account>))]
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(string))]
         public IHttpActionResult getByName(string name)
         {
-            return Ok(_account.Value.getByName(name));
+            List<Account> accounts = _accountRepository.Value.getByName(name);
+            if (accounts == null)
+            {
+                return NotFound();
+            }
+            return Ok(accounts);
         }
 
       

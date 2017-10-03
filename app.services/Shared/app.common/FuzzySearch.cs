@@ -9,10 +9,10 @@ namespace app.common
 {
     public static class fuzzySearch
     {
-        public static List<account> Search( string word,List<account> accountList,double fuzzyness)
+        public static List<Account> Search( string word,List<Account> accountList,double fuzzyness)
         {
 
-            List<account> foundWords =
+            List<Account> foundWords =
                 (
                     from s in accountList
                     let levenshteinDistance = LevenshteinDistance(word, s.Name)

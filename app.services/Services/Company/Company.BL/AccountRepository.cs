@@ -13,45 +13,45 @@ using System.Configuration;
 namespace Company.BL
 {
   
-    public class Account : IAccount
+    public class AccountRepository : IAccountRepository
     {
         string connectionString = ConfigurationManager.AppSettings["connectionstring"];
 
-        public List<account> getByName(string name)
+        public List<Account> getByName(string name)
         {
             
             var client = new MongoClient(connectionString);
             IMongoDatabase db = client.GetDatabase("company");
-            List<account> accountCollection = db.GetCollection<account>("account").AsQueryable().Select(x => new account { Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
+            List<Account> accountCollection = db.GetCollection<Account>("account").AsQueryable().Select(x => new Account { Id=x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
             fuzzySearch.Search(name, accountCollection, 0.70);
             return accountCollection;
         }
 
-        public List<account> getAll()
+        public List<Account> getAll()
         {
 
             var client = new MongoClient(connectionString);
             IMongoDatabase db = client.GetDatabase("company");
-            List<account> accountCollection = db.GetCollection<account>("account").AsQueryable().Select(x => new account {Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
+            List<Account> accountCollection = db.GetCollection<Account>("account").AsQueryable().Select(x => new Account {Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
             return accountCollection;
         }
 
-        public account getById(int id)
+        public Account getById(int id)
         {
 
             var client = new MongoClient(connectionString);
             IMongoDatabase db = client.GetDatabase("company");
-            account accountDetails = db.GetCollection<account>("account").AsQueryable().Where(x => x.Id == id).Select(x => new account { Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).FirstOrDefault();
+            Account accountDetails = db.GetCollection<Account>("account").AsQueryable().Where(x => x.Id == id).Select(x => new Account { Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).FirstOrDefault();
            
             return accountDetails;
         }
 
-        public account create(account accountDetails)
+        public Account create(Account accountDetails)
         {
             throw new NotImplementedException();
         }
 
-        public account update(int id) {
+        public Account update(int id) {
            throw new NotImplementedException();
         }
 

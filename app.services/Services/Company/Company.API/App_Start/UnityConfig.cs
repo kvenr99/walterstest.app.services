@@ -16,7 +16,7 @@ namespace Company.Api
         public static void RegisterComponents()
         {
             var container = new UnityContainer();
-            container.RegisterType<IAccount, Account>();
+            container.RegisterType<IAccountRepository, AccountRepository>();
             // register all your components with the container here
             // it is NOT necessary to register your controllers
 

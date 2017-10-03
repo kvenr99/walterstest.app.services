@@ -40,11 +40,11 @@
             
             </summary>
         </member>
-        <member name="M:Company.Api.Controllers.AccountController.#ctor(System.Lazy{Company.BL.Interfaces.IAccount})">
+        <member name="M:Company.Api.Controllers.AccountController.#ctor(System.Lazy{Company.BL.Interfaces.IAccountRepository})">
             <summary>
             
             </summary>
-            <param name="account"></param>
+            <param name="accountRepository"></param>
         </member>
         <member name="M:Company.Api.Controllers.AccountController.getByName(System.String)">
             <summary>
