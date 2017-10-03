@@ -11,7 +11,7 @@ using System.Web.Http.Results;
 namespace ApiController.Tests
 {
     [TestFixture]
-    public class CompanyControllerTest
+    public class AccountControllerTest
     {
 
         private Mock<Lazy<IAccountRepository>> _mockRepository;

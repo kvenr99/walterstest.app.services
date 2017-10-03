@@ -12,7 +12,7 @@ namespace Company.Api.Controllers
 {/// <summary>
 /// 
 /// </summary>
-    [RoutePrefix("account")]
+    [RoutePrefix("account/v1")]
     public class AccountController : ApiController
     {
         private readonly Lazy<IAccountRepository> _accountRepository;
