@@ -10,7 +10,7 @@ namespace Company.BL.Interfaces
     public interface IAccountRepository
     {
         List<Account> getAll();
-        Account getById(int id);
+   
         List<Account> getByName(string name);
         Account create(Account accountDetails);
 

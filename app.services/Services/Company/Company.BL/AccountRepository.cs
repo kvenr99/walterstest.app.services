@@ -19,7 +19,6 @@ namespace Company.BL
 
         public List<Account> getByName(string name)
         {
-            
             var client = new MongoClient(connectionString);
             IMongoDatabase db = client.GetDatabase("company");
             List<Account> accountCollection = db.GetCollection<Account>("account").AsQueryable().Select(x => new Account { Id=x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).ToList();
@@ -36,15 +35,7 @@ namespace Company.BL
             return accountCollection;
         }
 
-        public Account getById(int id)
-        {
-
-            var client = new MongoClient(connectionString);
-            IMongoDatabase db = client.GetDatabase("company");
-            Account accountDetails = db.GetCollection<Account>("account").AsQueryable().Where(x => x.Id == id).Select(x => new Account { Id = x.Id, Number = x.Number, Balance = x.Balance, Name = x.Name }).FirstOrDefault();
-           
-            return accountDetails;
-        }
+      
 
         public Account create(Account accountDetails)
         {
